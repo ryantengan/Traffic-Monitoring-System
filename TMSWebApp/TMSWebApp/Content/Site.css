@@ -1,9 +1,15 @@
 ﻿/* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    margin-top: 15px;
+    margin-top: 150px;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    line-height: 1;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
@@ -20,20 +26,253 @@ textarea {
     }
 }
 
-/* Primary navbar */
-.navbar-dark {
-    background-color: #002855;
+* {
+  transition: all 0.3s ease;
 }
 
-/* Secondary navbar */
-.navbar-secondary {
-    background-color: #363636;
+
+.navbar {
+    background: linear-gradient(to right,#8e90a3, #686a78, #8e90a3);
+    border-radius: 1px;
+    padding: .5rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: center;
+    top: 0px;
+    z-index: 1000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
-    .navbar-secondary .nav-link {
-        color: white;
+.navbar-brand {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #e4e4ed, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-links a {
+    color: #e4e4ed;
+    text-decoration: none;
+    margin-left: .1rem;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    position: relative;
+}
+
+    .nav-links a:hover {
+        color: #ffffff;
     }
 
-        .navbar-secondary .nav-link:hover {
-            color: #dbdbdb;
+    .nav-links a::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background: #ffffff;
+        bottom: -4px;
+        left: 0;
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+
+.form-control {
+    width: 100%;
+    max-width: 350px; /* Max width for larger screens */
+    margin-bottom: 20px; /* More space between fields */
+    padding: 10px 15px; /* Slightly more horizontal padding */
+    box-sizing: border-box;
+    font-size: 1rem;
+    border: 1px solid #ddd; /* Light grey border */
+    border-radius: 4px; /* Slightly rounded corners */
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; /* Smooth transition for focus */
+}
+
+    .form-control:focus {
+        outline: none; /* Remove default focus outline */
+        border-color: #80bdff; /* Brighter blue border on focus */
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Light blue glow */
+    }
+
+    /* Optional: Style for placeholder text */
+    .form-control::placeholder {
+        color: #a0a0a0;
+    }
+
+.btn-primary {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 4rem auto 2rem auto;
+    padding: 2.5rem 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: box-shadow 0.3s ease;
+}
+
+    .login-container:hover {
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+    }
+
+    .login-container h2 {
+        font-size: 2.75rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #333;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .login-container .form-control {
+        width: 100%;
+        margin-bottom: 1.5rem;
+        padding: 0.9rem 1.2rem;
+        border-radius: 8px;
+        border: 1.5px solid #ddd;
+        font-size: 1.1rem;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        box-sizing: border-box;
+    }
+
+        .login-container .form-control:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 8px rgba(102, 126, 234, 0.6);
         }
+
+    .login-container input[type="submit"],
+    .login-container button {
+        width: 100%;
+        padding: 0.85rem;
+        background-color: #667eea;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+        .login-container input[type="submit"]:hover,
+        .login-container button:hover {
+            background-color: #5665d8;
+        }
+
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+        font-family: inherit;
+    }
+
+    .login-container p.forgot-password {
+        text-align: right;
+        margin-top: -1rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.9rem;
+    }
+
+        .login-container p.forgot-password a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+            .login-container p.forgot-password a:hover {
+                color: #4451b3;
+                text-decoration: underline;
+            }
+
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 1rem 0;
+    color: #999;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+    font-style: italic;
+}
+
+    footer a {
+        color: #667eea;
+        text-decoration: none;
+        margin: 0 0.4rem;
+        font-weight: 600;
+    }
+
+        footer a:hover {
+            text-decoration: underline;
+            color: #4451b3;
+        }
+
+
+
+.secondary-navbar {
+    background: linear-gradient(to right, #686a78, #8e90a3, #686a78);
+    padding: 0.25rem 0; /* less vertical padding */
+    box-shadow: 0 1px 6px rgba(0,0,0,0.2);
+}
+
+    /* Center and tighten nav items horizontally */
+    .secondary-navbar .navbar-nav {
+        gap: 1rem; /* space between links */
+        justify-content: center;
+        width: auto;
+    }
+
+    .secondary-navbar .nav-link {
+        padding: 0.25rem 0.75rem;
+        font-weight: 600;
+        color: #ddd;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+    }
+
+        .secondary-navbar .nav-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+    /* Optional: remove left margin on first link */
+    .secondary-navbar .nav-item:first-child .nav-link {
+        margin-left: 0;
+    }
+
+    /* Adjust container margin so second navbar is just below the first */
+    .secondary-navbar .container {
+        margin-top: 0.2rem;
+        max-width: 800px;
+    }
+
+    /* Optional: override any default flex-grow on li */
+    .secondary-navbar .nav-item {
+        flex-grow: 0;
+    }

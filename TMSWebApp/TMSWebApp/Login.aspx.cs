@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace TMSWebApp
 {
@@ -11,7 +7,21 @@ namespace TMSWebApp
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
 
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            string username = txtName.Text;
+            string password = txtPass.Text;
+
+            if (username == "admin" && password == "password")
+            {
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                Response.Write("<script>alert('Invalid username or password');</script>");
+            }
         }
     }
 }
