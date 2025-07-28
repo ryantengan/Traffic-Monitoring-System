@@ -37,35 +37,33 @@
             </Scripts>
         </asp:ScriptManager>
         <!-- Top/Main Navbar -->
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container d-flex justify-content-between">
-                <a class="navbar-brand mb-0 h1" href="#">Traffic Monitoring System</a>
-            </div>
-        </nav>
+        <nav class="navbar">
+    <div class="container navbar-container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand" href="#">TRAFFIC MONITORING SYSTEM</a>
+    </div>
+</nav>
 
-        <!-- Secondary Navbar -->
-        <nav class="navbar navbar-expand-sm navbar-secondary">
-            <div class="container">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" runat="server" href="~/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" runat="server" href="~/About">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" runat="server" href="~/Contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+<!-- Secondary Navbar -->
+<nav class="navbar navbar-expand-sm secondary-navbar">
+  <div class="container d-flex justify-content-center">
+    <ul class="navbar-nav d-flex flex-row nav-links">
+      <li class="nav-item"><a class="nav-link" runat="server" href="~/">HOME</a></li>
+      <li class="nav-item"><a class="nav-link" runat="server" href="~/About">ABOUT</a></li>
+      <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">CONTACT</a></li>
+    </ul>
+  </div>
+</nav>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - Traffic Monitoring System</p>
-            </footer>
+  <p>&copy; <%: DateTime.Now.Year %> Traffic Monitoring System. All rights reserved.</p>
+  <p>
+    <a href="~/PrivacyPolicy" style="color:#667eea; text-decoration:none;">Privacy Policy</a> |
+    <a href="~/TermsOfService" style="color:#667eea; text-decoration:none;">Terms of Service</a>
+  </p>
+</footer>
         </div>
     </form>
     <asp:PlaceHolder runat="server">
